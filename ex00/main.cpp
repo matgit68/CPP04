@@ -6,11 +6,18 @@ int main() {
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << std::endl << meta->getType() << " ";
+	meta->makeSound(); //will output the cat sound!
+	std::cout << std::endl;
+	std::cout << i->getType() << " ";
 	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	std::cout << std::endl;
+	std::cout << j->getType() << " ";
+	j->makeSound(); //will output the cat sound!
+	std::cout << std::endl;
 
+	delete(meta);
+	delete(i);
+	delete(j);
 	return 0;
 }
