@@ -6,7 +6,7 @@
 #    By: mdjemaa <mdjemaa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 22:27:24 by mamat             #+#    #+#              #
-#    Updated: 2023/09/28 13:06:17 by mdjemaa          ###   ########.fr        #
+#    Updated: 2023/09/28 13:44:39 by mdjemaa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CYAN	:= \033[36;1m
 WHITE	:= \033[37;1m
 RESET	:= \033[0m
 
-NAME := ex00
+NAME := ex01
 
 CC := c++
 CFLAGS := -Wall -Wextra -Werror -g
@@ -33,8 +33,6 @@ SRC :=	Animal.cpp\
 		Cat.cpp\
 		Dog.cpp\
 		main.cpp\
-		WrongAnimal.cpp\
-		WrongCat.cpp\
 
 OBJ := $(SRC:.cpp=.o)
 

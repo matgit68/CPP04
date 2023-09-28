@@ -7,8 +7,8 @@ Animal::Animal(void) : type("Animal") {
 
 Animal::Animal(const Animal& copy) : type(copy.type) {
 	brain = new Brain();
-	for (int i = 0; i < 100 && !copy.brain->ideas[i].empty(); i++)
-		brain.ideas[i] = copy.brain->ideas[i].copy();
+	for (int i = 0; i < 100 && !copy.brain->getIdea(i).empty(); i++)
+		brain->setIdea(i, copy.brain->getIdea(i));
 	std::cout << "[Animal] Copy constructor called" << std::endl;
 }
 
@@ -20,8 +20,8 @@ Animal::~Animal() {
 Animal& Animal::operator=(const Animal& ref) {
 	type = ref.type;
 	brain = new Brain();
-	for (int i = 0; i < 100 && !ref.brain->ideas[i].empty(); i++)
-		brain.ideas[i] = ref.brain->ideas[i].copy();
+	for (int i = 0; i < 100 && !ref.brain->getIdea(i).empty(); i++)
+		brain->setIdea(i, ref.brain->getIdea(i));
 	std::cout << "[Animal] Assignment" << std::endl;
 	return (*this);
 }
