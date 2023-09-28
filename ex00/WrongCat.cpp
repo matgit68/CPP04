@@ -19,5 +19,3 @@ WrongCat& WrongCat::operator=(const WrongCat& ref) {
 	std::cout << "[WrongCat] Assignment" << std::endl;
 	return (*this);
 }
-
-void WrongCat::makeSound(void) const { std::cout << "Meooow" << std::endl; }

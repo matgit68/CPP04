@@ -1,4 +1,4 @@
-#include "Wrong Animal.hpp"
+#include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) : type("WrongAnimal") {
 	std::cout << "[WrongAnimal] Default constructor called" << std::endl;

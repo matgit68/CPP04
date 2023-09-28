@@ -6,7 +6,7 @@
 #    By: mdjemaa <mdjemaa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 22:27:24 by mamat             #+#    #+#              #
-#    Updated: 2023/09/28 12:15:10 by mdjemaa          ###   ########.fr        #
+#    Updated: 2023/09/28 13:06:17 by mdjemaa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ CFLAGS := -Wall -Wextra -Werror -g
 SANITIZE := -fsanitize=address
 
 SRC :=	Animal.cpp\
+		Brain.cpp\
 		Cat.cpp\
 		Dog.cpp\
 		main.cpp\
