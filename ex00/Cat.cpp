@@ -20,4 +20,4 @@ Cat& Cat::operator=(const Cat& ref) {
 	return (*this);
 }
 
-void Cat::makeSound(void) { std::cout << "Meooow" << std::endl; }
+void Cat::makeSound(void) const { std::cout << "Meooow" << std::endl; }

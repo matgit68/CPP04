@@ -18,6 +18,6 @@ Animal& Animal::operator=(const Animal& ref) {
 	return (*this);
 }
 
-std::string Animal::getType() { return type; }
+std::string Animal::getType() const { return type; }
 
-void Animal::makeSound(void) { std::cout << "Abstract noise" << std::endl; }
+void Animal::makeSound(void) const { std::cout << "Abstract noise" << std::endl; }
