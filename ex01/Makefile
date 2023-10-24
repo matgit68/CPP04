@@ -22,7 +22,7 @@ CYAN	:= \033[36;1m
 WHITE	:= \033[37;1m
 RESET	:= \033[0m
 
-NAME := ex03
+NAME := ex01
 
 CXX := c++
 CPPFLAGS := -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address

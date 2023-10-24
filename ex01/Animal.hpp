@@ -12,7 +12,7 @@ protected:
 public:
 	Animal(void);
 	Animal(const Animal& copy);
-	~Animal();
+	virtual ~Animal();
 
 	Animal& operator=(const Animal& ref);
 
