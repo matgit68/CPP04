@@ -1,31 +1,31 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal(void) : type("Animal") {
+AAnimal::AAnimal(void) : type("AAnimal") {
 	brain = new Brain();
-	std::cout << "[Animal] Default constructor called" << std::endl;
+	std::cout << "[AAnimal] Default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& copy) : type(copy.type) {
+AAnimal::AAnimal(const AAnimal& copy) : type(copy.type) {
 	brain = new Brain();
 	for (int i = 0; i < 100 && !copy.brain->getIdea(i).empty(); i++)
 		brain->setIdea(i, copy.brain->getIdea(i));
-	std::cout << "[Animal] Copy constructor called" << std::endl;
+	std::cout << "[AAnimal] Copy constructor called" << std::endl;
 }
 
-Animal::~Animal() {
+AAnimal::~AAnimal() {
 	delete(brain);
-	std::cout << "[Animal] Destructor called" << std::endl;
+	std::cout << "[AAnimal] Destructor called" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& ref) {
+AAnimal& AAnimal::operator=(const AAnimal& ref) {
 	type = ref.type;
 	brain = new Brain();
 	for (int i = 0; i < 100 && !ref.brain->getIdea(i).empty(); i++)
 		brain->setIdea(i, ref.brain->getIdea(i));
-	std::cout << "[Animal] Assignment" << std::endl;
+	std::cout << "[AAnimal] Assignment" << std::endl;
 	return (*this);
 }
 
-std::string Animal::getType() const { return type; }
+std::string AAnimal::getType() const { return type; }
 
-void Animal::makeSound(void) const { std::cout << "Abstract noise" << std::endl; }
+void AAnimal::makeSound(void) const { std::cout << "Abstract noise" << std::endl; }

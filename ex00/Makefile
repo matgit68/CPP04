@@ -6,7 +6,7 @@
 #    By: mdjemaa <mdjemaa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 22:27:24 by mamat             #+#    #+#              #
-#    Updated: 2023/09/28 12:15:10 by mdjemaa          ###   ########.fr        #
+#    Updated: 2023/09/29 17:05:15 by mdjemaa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,10 @@ CYAN	:= \033[36;1m
 WHITE	:= \033[37;1m
 RESET	:= \033[0m
 
-NAME := ex00
+NAME := ex03
 
-CC := c++
-CFLAGS := -Wall -Wextra -Werror -g
-SANITIZE := -fsanitize=address
+CXX := c++
+CPPFLAGS := -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address
 
 SRC :=	Animal.cpp\
 		Cat.cpp\
@@ -39,12 +38,8 @@ OBJ := $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-.c.o:
-	@printf '$(GREEN)Compiling: $(RESET)$<\n'
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(<:.c=.o) 
-
 $(NAME): $(OBJ)
-	@$(CC) -std=c++98 $(CFLAGS) $(OBJ) -o $(NAME) $(SANITIZE)
+	@$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJ)
 	@printf '$(RED)- $(NAME) done -$(RESET)\n'
 
 clean:

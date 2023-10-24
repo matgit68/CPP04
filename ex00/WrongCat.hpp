@@ -13,6 +13,8 @@ public:
 	~WrongCat();
 
 	WrongCat& operator=(const WrongCat& ref);
+
+	void makeSound(void) const;
 };
 
 #endif

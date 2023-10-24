@@ -2,10 +2,10 @@
 #include "Dog.hpp"
 
 int main() {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const Animal* pouet;
+	const AAnimal* meta = new AAnimal();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
+	const AAnimal* pouet;
 
 	pouet = i;
 	std::cout << std::endl << meta->getType() << " ";

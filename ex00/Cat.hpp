@@ -14,7 +14,7 @@ public:
 
 	Cat& operator=(const Cat& ref);
 
-	virtual void makeSound(void) const;
+	void makeSound(void) const;
 };
 
 #endif
