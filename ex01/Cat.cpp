@@ -1,22 +1,25 @@
 #include "Cat.hpp"
 
 Cat::Cat(void) {
-	type = "Cat";
 	std::cout << "[Cat] Default constructor called" << std::endl;
+	type = "Cat";
+	brain = new Brain();
 }
 
-Cat::Cat(const Cat& copy) {
-	type = copy.type;
+Cat::Cat(const Cat& copy) : Animal() {
 	std::cout << "[Cat] Copy constructor called" << std::endl;
+	*this = copy;
 }
 
 Cat::~Cat() {
 	std::cout << "[Cat] Destructor called" << std::endl;
+	delete(brain);
 }
 
 Cat& Cat::operator=(const Cat& ref) {
-	type = ref.type;
 	std::cout << "[Cat] Assignment" << std::endl;
+	type = ref.type;
+	brain = ref.brain;
 	return (*this);
 }
 

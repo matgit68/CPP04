@@ -7,17 +7,16 @@ class AAnimal
 {
 protected:
 	std::string type;
-	Brain* brain;
 
 public:
 	AAnimal(void);
 	AAnimal(const AAnimal& copy);
-	~AAnimal();
+	virtual ~AAnimal();
 
 	AAnimal& operator=(const AAnimal& ref);
 
 	virtual std::string getType() const;
-	virtual void makeSound(void) const;
+	virtual void makeSound(void) const = 0;
 };
 
 #endif

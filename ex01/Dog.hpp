@@ -5,7 +5,8 @@
 
 class Dog : public Animal
 {
-protected:
+private:
+	Brain *brain;
 
 public:
 	Dog(void);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mdjemaa <mdjemaa@student.42.fr>            +#+  +:+       +#+         #
+#    By: mamat <mamat@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 22:27:24 by mamat             #+#    #+#              #
-#    Updated: 2023/09/29 17:05:15 by mdjemaa          ###   ########.fr        #
+#    Updated: 2023/10/28 16:52:02 by mamat            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,12 @@ CYAN	:= \033[36;1m
 WHITE	:= \033[37;1m
 RESET	:= \033[0m
 
-NAME := ex03
+NAME := ex02
 
 CXX := c++
 CPPFLAGS := -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address
 
-SRC :=	Animal.cpp\
+SRC :=	AAnimal.cpp\
 		Brain.cpp\
 		Cat.cpp\
 		Dog.cpp\
@@ -49,3 +49,4 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean $(NAME)
+

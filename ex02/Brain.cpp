@@ -5,9 +5,8 @@ Brain::Brain(void) {
 }
 
 Brain::Brain(const Brain& copy) {
-	for(int i = 100; i < 100 && !copy.ideas[i].empty(); i++)
-		ideas[i] = copy.ideas[i];
 	std::cout << "A Brain has been created with copy constructor" << std::endl;
+	*this = copy;
 }
 
 Brain::~Brain(void) {
