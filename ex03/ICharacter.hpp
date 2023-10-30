@@ -1,9 +1,13 @@
+class AMateria;
+
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 # include <iomanip>
+# include <iostream>
+# include <string>
+# include "AMateria.hpp"
 
-class ICharacter
-{
+class ICharacter {
 public:
 	virtual ~ICharacter() {}
 	virtual std::string const & getName() const = 0;

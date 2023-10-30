@@ -28,12 +28,11 @@ CXX := c++
 CPPFLAGS := -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address
 
 SRC :=	AMateria.cpp\
+		Character.cpp\
 		Cure.cpp\
 		Ice.cpp\
-		ICharacter.cpp\
-		IMateriacource.cpp\
-		Dog.cpp\
 		main.cpp\
+		MateriaSource.cpp\
 
 OBJ := $(SRC:.cpp=.o)
 
