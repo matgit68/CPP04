@@ -24,10 +24,13 @@ int main() {
 	me->use(3, *bob);
 	me->use(4, *bob);
 	me->unequip(0);
-	me->unequip(1);
+	me->unequip(3);
 	me->unequip(1);
 	me->unequip(17);
 	me->unequip(0);
+	me->use(3, *bob);
+	me->equip(tmp);
+	me->use(0, *bob);
 	delete bob;
 	delete me;
 	delete src;
