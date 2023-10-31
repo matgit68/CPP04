@@ -46,8 +46,10 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > 3 || !slot[idx]) {
+		std::cout << "Couldn't unequip slot " << idx << std::endl;
 		return;
+	}
 	std::cout << name << " unequiped " << slot[idx]->getType() << " (on slot " << idx << ")" << std::endl;
 	slot[idx] = NULL;
 }
