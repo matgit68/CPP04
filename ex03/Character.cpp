@@ -1,33 +1,33 @@
 #include "Character.hpp"
 
-Character::Character() : gLevel(0) {
+Character::Character() : name("") {
 	std::cout << "Character default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		slot[i] = NULL;
 }
 
-Character::Character(const Character &copy) : gLevel(0) {
+Character::Character(const std::string &n) : name(n) {
+	std::cout << "Character default constructor called : " << name << std::endl;
+	for (int i = 0; i < 4; i++)
+		slot[i] = NULL;
+}
+
+Character::Character(const Character &copy) {
 	std::cout << "Character default constructor called" << std::endl;
 	*this = copy;
 }
 
 Character::~Character() {
 	std::cout << "Character destructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
-		if (slot[i])
-			delete(slot[i]);
-	for(int i = 0; i < gLevel; i++)
-		delete(garbage[i]);
 }
 
 Character &Character::operator=(const Character &ref) {
 	std::cout << "Character assignation called" << std::endl;
 	name = ref.name;
 	for (int i = 0; i < 4; i++) {
-		delete(slot[i]);
 		slot[i] = NULL;
 		if (ref.slot[i])
-			slot[i] = ref.slot[i]->clone();
+			slot[i] = ref.slot[i];
 	}
 	return *this;
 }
@@ -35,23 +35,26 @@ Character &Character::operator=(const Character &ref) {
 std::string const &Character::getName() const { return name; }
 
 void Character::equip(AMateria* m) {
-	int i = -1;
-	while (++i < 4) {
+	for(int i = 0; i < 4 ; i++) {
 		if (!slot[i]) {
 			slot[i] = m;
+			std::cout << name << " equiped " << m->getType() << " (on slot " << i << ")" << std::endl;
 			return ;
 		}
 	}
+	std::cout << "Couldn't equip " << m->getType() << " : slots are full" << std::endl;
 }
 
 void Character::unequip(int idx) {
 	if (idx < 0 || idx > 3)
 		return;
-	// je le reference ou ce putain de truc ?
-	garbage[gLevel++] = slot[idx];
+	std::cout << name << " unequiped " << slot[idx]->getType() << " (on slot " << idx << ")" << std::endl;
 	slot[idx] = NULL;
 }
 
-void Character::use(int idx, Character& target) {
-	slot[idx]->use(target);
+void Character::use(int idx, ICharacter& target) {
+	if (idx < 0 || idx > 3)
+		return;
+	if (slot[idx])
+		slot[idx]->use(target);
 }

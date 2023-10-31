@@ -2,11 +2,11 @@
 
 Cure::Cure() {
 	std::cout << "Cure default constructor called" << std::endl;
-	type = "Cure";
+	type = "cure";
 }
 
 Cure::Cure(const Cure &copy) {
-	std::cout << "Cure default constructor called" << std::endl;
+	std::cout << "Cure copy constructor called" << std::endl;
 	*this = copy;
 }
 
