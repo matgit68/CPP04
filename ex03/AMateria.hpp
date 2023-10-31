@@ -2,6 +2,7 @@ class ICharacter;
 
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
+# define VERBOSE 0
 # include "ICharacter.hpp"
 
 class AMateria {
