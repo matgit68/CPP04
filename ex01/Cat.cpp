@@ -19,7 +19,7 @@ Cat::~Cat() {
 Cat& Cat::operator=(const Cat& ref) {
 	std::cout << "[Cat] Assignment" << std::endl;
 	type = ref.type;
-	brain = ref.brain;
+	brain = new Brain(*ref.brain);
 	return (*this);
 }
 

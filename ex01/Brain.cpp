@@ -14,7 +14,7 @@ Brain::~Brain(void) {
 }
 
 Brain& Brain::operator=(const Brain& ref) {
-	for(int i = 100; i < 100 && !ref.ideas[i].empty(); i++)
+	for(int i = 0; i < 100; i++)
 		ideas[i] = ref.ideas[i];
 	std::cout << "A Brain has been assigned" << std::endl;
 	return (*this);
