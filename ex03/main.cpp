@@ -23,6 +23,16 @@ int main() {
 	me->use(3, *bob);
 	me->use(3, *bob);
 	me->use(4, *bob);
+	{
+		std::cout << "---------------------------" << std::endl;
+		ICharacter *tmp;
+		tmp = me;
+		tmp->unequip(3);
+		tmp->use(3, *bob);
+		std::cout << "---------------------------" << std::endl;
+	}
+	me->use(3, *bob);
+	std::cout << "---------------------------" << std::endl;
 	me->unequip(0);
 	me->unequip(3);
 	me->unequip(1);

@@ -8,6 +8,7 @@ Cat::Cat(void) {
 
 Cat::Cat(const Cat& copy) : Animal() {
 	std::cout << "[Cat] Copy constructor called" << std::endl;
+	brain = new Brain();
 	*this = copy;
 }
 
@@ -19,6 +20,7 @@ Cat::~Cat() {
 Cat& Cat::operator=(const Cat& ref) {
 	std::cout << "[Cat] Assignment" << std::endl;
 	type = ref.type;
+	delete(brain);
 	brain = new Brain(*ref.brain);
 	return (*this);
 }

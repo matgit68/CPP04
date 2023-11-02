@@ -6,9 +6,12 @@ int main() {
 	const Animal* i = new Cat();
 	delete j;//should not create a leak
 	delete i;
-	Dog basic;
+	Cat basic;
+	Dog b2;
 	{
-		Dog tmp = basic;
+		Cat tmp = basic;
+		Dog tmp2;
+		tmp2 = b2;
 	}
 	return 0;
 }

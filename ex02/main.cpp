@@ -15,5 +15,13 @@ int main() {
 	delete(i);
 	delete(j);
 
+	Cat basic;
+	Dog b2;
+	{
+		Cat tmp = basic;
+		Dog tmp2;
+		tmp2 = b2;
+	}
+
 	return 0;
 }
