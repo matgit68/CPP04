@@ -2,21 +2,21 @@
 
 Character::Character() : name("") {
 	if (VERBOSE)
-		std::cout << "Character default constructor called" << std::endl;
+		std::cout << "Character void constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		slot[i] = NULL;
 }
 
 Character::Character(const std::string &n) : name(n) {
 	if (VERBOSE)
-		std::cout << "Character default constructor called : " << name << std::endl;
+		std::cout << "Character name constructor called : " << name << std::endl;
 	for (int i = 0; i < 4; i++)
 		slot[i] = NULL;
 }
 
 Character::Character(const Character &copy) {
 	if (VERBOSE)
-		std::cout << "Character default constructor called" << std::endl;
+		std::cout << "Character copy constructor called" << std::endl;
 	*this = copy;
 }
 
@@ -38,6 +38,14 @@ Character &Character::operator=(const Character &ref) {
 }
 
 std::string const &Character::getName() const { return name; }
+
+AMateria *Character::getMateria(int i) const {
+	if (slot[i])
+		return slot[i];
+	std::cout << "No Materia in here !" << std::endl;
+		return NULL;
+}
+
 
 void Character::equip(AMateria* m) {
 	for(int i = 0; i < 4 ; i++) {

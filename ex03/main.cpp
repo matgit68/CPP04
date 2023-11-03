@@ -7,7 +7,7 @@ int main() {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
+	Character* me = new Character("me");
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
@@ -25,10 +25,17 @@ int main() {
 	me->use(4, *bob);
 	{
 		std::cout << "---------------------------" << std::endl;
-		ICharacter *tmp;
-		tmp = me;
-		tmp->unequip(3);
-		tmp->use(3, *bob);
+		Character *toto = new Character(*me);
+		AMateria *del = toto->getMateria(3);
+		toto->unequip(3);
+		toto->use(3, *bob);
+		toto->use(0, *bob);
+		delete(toto->getMateria(0));
+		delete(toto->getMateria(1));
+		delete(toto->getMateria(2));
+		delete(toto->getMateria(3));
+		delete(del);
+		delete(toto);
 		std::cout << "---------------------------" << std::endl;
 	}
 	me->use(3, *bob);
